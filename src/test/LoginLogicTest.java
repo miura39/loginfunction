@@ -19,7 +19,7 @@ public class LoginLogicTest {
 		}
 	}
 	public static void testExecute2() {
-		Login login = new Login("testname","1234");
+		Login login = new Login("testname","12345");
 		LoginLogic bo = new LoginLogic();
 		boolean result = bo.execute(login);
 		if(!result) {
