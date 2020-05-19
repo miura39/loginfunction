@@ -8,7 +8,7 @@
 </head>
 <body>
 <ul>
-<li><a href = "/loginfunction/WelcomeServlet">トップへ</a></li>
+<li><a href = "/loginfunction/LoginServlet">トップへ</a></li>
 <li>ユーザー登録</li>
 </ul>
 </body>
