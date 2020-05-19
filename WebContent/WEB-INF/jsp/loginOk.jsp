@@ -7,8 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<ul>
-<li><a href = "/loginfunction/WelcomeServlet">トップへ</a></li>
-<li>ユーザー登録</li>
-</ul>
+OK
+<a href ="/loginfunction/WelcomeServlet">トップへ</a>
 </body>
+</html>

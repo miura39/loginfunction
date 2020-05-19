@@ -38,6 +38,7 @@ public class LoginServlet extends HttpServlet{
 			RequestDispatcher dispatcher =
 					request.getRequestDispatcher("WEB-INF/jsp/loginOK.jsp");
 			dispatcher.forward(request, response);
+		}else {
 			//リダイレクト
 			response.sendRedirect("/loginfunction/LoginServlet");
 		}
