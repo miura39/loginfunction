@@ -7,8 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<ul>
-<li><a href = "/loginfunction/LoginServlet">トップへ</a></li>
-<li>ユーザー登録</li>
-</ul>
+<P></P>
+<form action="/loginfunction/LoginServlet" method="post">
+userID : <input type="text" name="userID"><br>
+password : <input type="text" name="pass"><br>
+<input type ="submit" value="ログイン">
+</form>
 </body>

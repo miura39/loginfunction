@@ -33,7 +33,6 @@ public class LoginServlet extends HttpServlet{
 		if(result) {
 			HttpSession session = request.getSession();
 			session.setAttribute("userId", userId);
-
 		//フォワード
 			RequestDispatcher dispatcher =
 					request.getRequestDispatcher("WEB-INF/jsp/loginOK.jsp");
