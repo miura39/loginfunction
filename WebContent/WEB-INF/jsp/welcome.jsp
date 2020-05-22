@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>ログイン画面</title>
 </head>
 <body>
+<ul>
+<li><a href="/loginfunction/LoginServlet">Login</a></li>
+<li>ユーザー登録</li>
+</ul>
 
 </body>
 </html>

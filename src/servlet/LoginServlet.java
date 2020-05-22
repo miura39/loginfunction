@@ -20,14 +20,27 @@ public class LoginServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response)
 		throws ServletException, IOException{
+		//フォワード
+		RequestDispatcher dispatcher = request.getRequestDispatcher(
+				"/WEB-INF/jsp/login.jsp");
+		dispatcher.forward(request, response);
+	}
+	protected void doPost(HttpServletRequest request,HttpServletResponse response)
+		throws ServletException, IOException{
 		//リクエストパラメータの取得
 		request.setCharacterEncoding("UTF-8");
 		String userId = request.getParameter("userID");
 		String pass = request.getParameter("pass");
+
 		//ログイン処理の実行
 		Login login = new Login(userId, pass);
 		LoginLogic bo = new LoginLogic();
-		boolean result = bo.execute(login);
+		boolean result = false;
+		try {
+			result = bo.execute(login);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 		//ログイン処理の成否によって処理を分岐
 		if(result) {
