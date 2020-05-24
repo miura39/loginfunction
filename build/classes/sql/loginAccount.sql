@@ -23,3 +23,4 @@ CREATE TABLE ACCOUNT(
 /*テストデータ書き込み*/
 INSERT INTO ACCOUNT(USER_ID,PASS,MAIL,NAME,AGE)
 	VALUES('testname','1234','test@test.com','テストデータ',20);
+	VALUES('testname2','12345','aaa@aaa.com','test',30);
