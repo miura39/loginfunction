@@ -48,7 +48,7 @@ public class LoginServlet extends HttpServlet{
 			session.setAttribute("userId", userId);
 		//フォワード
 			RequestDispatcher dispatcher =
-					request.getRequestDispatcher("WEB-INF/jsp/loginOK.jsp");
+					request.getRequestDispatcher("WEB-INF/jsp/loginOk.jsp");
 			dispatcher.forward(request, response);
 		}else {
 			//リダイレクト

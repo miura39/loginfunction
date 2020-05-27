@@ -14,9 +14,9 @@ public class AccountDAO {
 	//データベース接続に使用する情報
 	//注）権限を与えること。GRANT ALL PRIVILEGES ON　〜〜〜〜
 	//注）JDBCのビルドパスを設定すること。
-//	private final String DRIVER = "com.mysql.cj.jdbc.Driver";
-	private final String URL = "jdbc:mysql://localhost:3306/loginaccounts?useSSL=false";
-//	private final String URL = "com.mysql.cj.jdbc.Driver://localhost:3306/loginaccounts";
+	private final String DRIVER = "com.mysql.cj.jdbc.Driver";
+//	private final String URL = "jdbc:mysql://localhost:3306/loginaccounts?useSSL=false";
+	private final String URL = "jdbc:mysql://localhost:3306/loginaccounts";
 
 	private final String USER = "user1";
 	private final String PASS = "password";
@@ -28,7 +28,7 @@ public class AccountDAO {
 
 		try{
 			//データベースへ接続ß
-//			Class.forName(DRIVER);
+			Class.forName(DRIVER);
 			conn = DriverManager.getConnection(URL,USER,PASS);
 
 			//SELECT文を準備
@@ -51,7 +51,7 @@ public class AccountDAO {
 				int age = rs.getInt("AGE");
 				account = new Account(userId,pass,mail,name,age);
 			}
-		}catch(SQLException | IllegalArgumentException | SecurityException e) {
+		}catch(SQLException | IllegalArgumentException | SecurityException | ClassNotFoundException e) {
 			//データベースに関するエラー情報を提供する
 			//catchを先に記述しておくと良い。try文でエラーが出るため。
 			e.printStackTrace();
