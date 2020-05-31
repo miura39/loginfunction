@@ -45,6 +45,7 @@ public class LoginServlet extends HttpServlet{
 		//ログイン処理の成否によって処理を分岐
 		if(result) {
 			HttpSession session = request.getSession();
+			request.setAttribute("userId", userId);
 			session.setAttribute("userId", userId);
 		//フォワード
 			RequestDispatcher dispatcher =
