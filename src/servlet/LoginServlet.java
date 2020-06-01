@@ -17,6 +17,13 @@ import model.LoginLogic;
 public class LoginServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 
+	//jspのhomeディレクトリ
+	private static final String JSP_HOME = "WEB-INF/jsp/";
+	//login.jspのルート
+	private static final String JSP_LOGIN = JSP_HOME + "login.jsp";
+
+	private static final String JSP_LOGINOK = JSP_HOME + "loginOk.jsp";
+
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response)
 		throws ServletException, IOException{
@@ -45,11 +52,13 @@ public class LoginServlet extends HttpServlet{
 		//ログイン処理の成否によって処理を分岐
 		if(result) {
 			HttpSession session = request.getSession();
+			//jspにデータを渡すためにsetAttributeで指定する
 			request.setAttribute("userId", userId);
+
 			session.setAttribute("userId", userId);
 		//フォワード
 			RequestDispatcher dispatcher =
-					request.getRequestDispatcher("WEB-INF/jsp/loginOk.jsp");
+					request.getRequestDispatcher(JSP_LOGINOK);
 			dispatcher.forward(request, response);
 		}else {
 			//リダイレクト
