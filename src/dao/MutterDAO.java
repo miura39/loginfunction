@@ -31,6 +31,10 @@ public class MutterDAO {
 
 			//SELECT文を実行し、結果を取得
 			ResultSet rs = pstmt.executeQuery();
+
+			if(rs.next()){
+			String userId = rs.getString(columnIndex);
+			}
 		}
 	}
 }
