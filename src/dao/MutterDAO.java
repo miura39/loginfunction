@@ -34,6 +34,8 @@ public class MutterDAO {
 
 			if(rs.next()){
 			String userId = rs.getString(columnIndex);
+			String pass = rs.getString("pass");
+
 			}
 		}
 	}
