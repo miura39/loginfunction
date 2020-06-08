@@ -3,6 +3,13 @@ package dao;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import java.sql.Connection;
+
+import model.Mutter;
+
 
 public class MutterDAO {
 	//データベース接続に使用する情報
@@ -14,14 +21,14 @@ public class MutterDAO {
 	private final String USER = "user1";
 	private final String PASS = "password";
 
-	public Account findByLogin(Login login) {
+	public List<Mutter> findAll(){
+		List<Mutter> mutterList = new ArrayList<>();
 
-		Account account = null;
 
 		try{
 			//データベースへ接続ß
 			Class.forName(DRIVER);
-			conn = DriverManager.getConnection(URL,USER,PASS);
+			Connection conn = DriverManager.getConnection(URL,USER,PASS);
 
 			//SELECT文を準備
 			String sql = "SELECT USER_ID,PASS,MAIL,NAME,AGE FROM ACCOUNT WHERE USER_ID = ? AND PASS = ?";
