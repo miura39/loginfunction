@@ -52,6 +52,19 @@ public class MutterDAO {
 		e.printStackTrace();
 	}
 		return mutterList;
-
 	}
+	public boolean create(Mutter mutter) {
+		//データベース接続
+		try(Connection conn = DriverManager.getConnection(URL,USER,PASS)){
+			//INSERT文の準備（idは自動連番なので指定しなくて良い）
+			String sql = "INSERT INTO MUTTER(NAME,TEXT)VALUES(?,?)";
+			PreparedStatement pstme = conn.prepareStatement(sql);
+
+		} catch (SQLException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
+		return false;
+	}
+
 }
