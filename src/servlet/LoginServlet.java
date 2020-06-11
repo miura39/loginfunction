@@ -21,7 +21,7 @@ public class LoginServlet extends HttpServlet{
 	private static final String JSP_HOME = "WEB-INF/jsp/";
 	//login.jspのルート
 	private static final String JSP_LOGIN = JSP_HOME + "login.jsp";
-
+	
 	private static final String JSP_LOGINOK = JSP_HOME + "loginOk.jsp";
 
 	protected void doGet(HttpServletRequest request,
